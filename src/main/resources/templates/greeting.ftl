@@ -1,12 +1,7 @@
-
-    <!DOCTYPE HTML>
-    <html>
-    <head>
-        <title>Sweater</title>
-        <meta content="charset=UTF-8" />
-    </head>
-    <body>
-    <div>Hello!!! <div/>
-    <a href="/main">main page</a>
-    </body>
-    </html>
+<#import "parts/common.ftl" as c>
+<@c.page>
+    <h5>Hello, bro</h5>
+    <div>It is twitter clone!!!
+        <div/>
+        </html>
+</@c.page>
