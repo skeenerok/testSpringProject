@@ -4,6 +4,8 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
 import java.util.Collection;
 import java.util.Set;
 
@@ -16,6 +18,27 @@ public class User implements UserDetails {
         this.username = username;
         this.password = password;
     }
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+    @NotBlank(message = "Username cannot be empty")
+    private String username;
+    @NotBlank(message = "Password cannot be empty")
+    private String password;
+    @Transient
+    @NotBlank(message = "Password confirmation cannot be empty")
+    private String password2;
+    private boolean active;
+
+    @Email(message = "Email is not correct")
+    @NotBlank(message = "Email cannot be empty")
+    private String email;
+    private String activationCode;
+
+    @ElementCollection(targetClass = Role.class, fetch = FetchType.EAGER)
+    @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
+    @Enumerated(EnumType.STRING)
+    private Set<Role> roles;
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
@@ -42,16 +65,13 @@ public class User implements UserDetails {
         return isActive();
     }
 
-    @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private Long id;
+    public String getPassword2() {
+        return password2;
+    }
 
-    private String username;
-
-    private String password;
-    private boolean active;
-    private String email;
-    private String activationCode;
+    public void setPassword2(String password2) {
+        this.password2 = password2;
+    }
 
     public String getEmail() {
         return email;
@@ -69,13 +89,10 @@ public class User implements UserDetails {
         this.activationCode = activationCode;
     }
 
-    @ElementCollection(targetClass = Role.class, fetch =  FetchType.EAGER)
-    @CollectionTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"))
-    @Enumerated(EnumType.STRING)
-    private Set<Role> roles;
     public boolean isAdmin(){
         return getRoles().contains(Role.ADMIN);
     }
+
     public Long getId() {
         return id;
     }

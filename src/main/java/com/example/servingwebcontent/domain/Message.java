@@ -1,6 +1,9 @@
 package com.example.servingwebcontent.domain;
 
+import org.hibernate.validator.constraints.Length;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 
 @Entity // This tells Hibernate to make a table out of this class
 public class Message {
@@ -16,7 +19,8 @@ public class Message {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Long id;
-
+    @NotBlank(message = "Please fill the message")
+    @Length(max = 2048, message = "Too long message")
     private String text;
 
     private String filename;
@@ -52,7 +56,7 @@ public class Message {
     public void setTag(String tag) {
         this.tag = tag;
     }
-
+    @Length(max = 255, message = "Too long tag")
     private String tag;
 
     public String getAuthorName(){
