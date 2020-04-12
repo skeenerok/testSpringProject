@@ -1,11 +1,12 @@
 <#assign
-know = Session.SPRING_SECURITY_CONTEXT??
+known = Session.SPRING_SECURITY_CONTEXT??
 >
-<#if know>
-    <#assign  user = Session.SPRING_SECURITY_CONTEXT.authentication.principal
+<#if known>
+    <#assign
+    user = Session.SPRING_SECURITY_CONTEXT.authentication.principal
     name = user.getUsername()
-    <#--isAdmin = user.isAdmin()-->
-    isAdmin = user.getAuthorities()?seq_contains('ADMIN')
+    isAdmin = user.isAdmin()
+    <#--isAdmin = user.getAuthorities()?seq_contains('ADMIN')-->
     currentUserId = user.getId()
     >
 <#else >

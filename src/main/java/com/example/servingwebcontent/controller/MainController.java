@@ -31,13 +31,16 @@ public class MainController {
     @Value("${upload.path}")
     private String uploadPath;
     @GetMapping("/")
-    public String greeting(Map<String, Object> model) {
+    public String greeting(Model model,
+                           @AuthenticationPrincipal User user) {
+        model.addAttribute("user", user);
         return "greeting";
     }
     @GetMapping("/main")
     public  String main(
             @RequestParam(required = false, defaultValue = "") String filter,
-            Model model){
+            Model model,
+            @AuthenticationPrincipal User user){
         Iterable<Message> messages;
         if( filter != null && !filter.isEmpty()){
             messages = messageRepos.findByTag(filter);
@@ -46,6 +49,7 @@ public class MainController {
         }
         model.addAttribute("messages", messages);
         model.addAttribute("filter", filter);
+        model.addAttribute("user", user);
         return "main";
     }
     @PostMapping("/main")
@@ -104,7 +108,10 @@ public class MainController {
             @RequestParam(required = false) Message message
     ) {
         Set<Message> messages = user.getMessages();
-
+        model.addAttribute("userChannel", user);
+        model.addAttribute("subscriptionsCount", user.getSubscriptions().size());
+        model.addAttribute("subscribersCount", user.getSubscribers().size());
+        model.addAttribute("isSubscriber", user.getSubscribers().contains(currentUser));
         model.addAttribute("messages", messages);
         model.addAttribute("message", message);
         model.addAttribute("isCurrentUser", currentUser.equals(user));
@@ -124,16 +131,12 @@ public class MainController {
             if (!StringUtils.isEmpty(text)) {
                 message.setText(text);
             }
-
             if (!StringUtils.isEmpty(tag)) {
                 message.setTag(tag);
             }
-
             saveFile(message, file);
-
             messageRepos.save(message);
         }
-
         return "redirect:/user-messages/" + user;
     }
 }
