@@ -5,6 +5,10 @@ import com.example.servingwebcontent.domain.User;
 import com.example.servingwebcontent.repos.MessageRepos;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -26,32 +30,38 @@ import java.util.UUID;
 @Controller
 public class MainController {
     @Autowired
-    private MessageRepos  messageRepos;
+    private MessageRepos messageRepos;
 
     @Value("${upload.path}")
     private String uploadPath;
+
     @GetMapping("/")
     public String greeting(Model model,
                            @AuthenticationPrincipal User user) {
         model.addAttribute("user", user);
         return "greeting";
     }
+
     @GetMapping("/main")
-    public  String main(
+    public String main(
             @RequestParam(required = false, defaultValue = "") String filter,
             Model model,
-            @AuthenticationPrincipal User user){
-        Iterable<Message> messages;
-        if( filter != null && !filter.isEmpty()){
-            messages = messageRepos.findByTag(filter);
-        }else {
-            messages = messageRepos.findAll();
+            @AuthenticationPrincipal User user,
+            @PageableDefault(sort = {"id"}, direction = Sort.Direction.DESC) Pageable pageable) {
+        Page<Message> page;
+        if (filter != null && !filter.isEmpty()) {
+            page = messageRepos.findByTag(filter, pageable);
+        } else {
+            page = messageRepos.findAll(pageable);
         }
-        model.addAttribute("messages", messages);
+        model.addAttribute("messages", page);
         model.addAttribute("filter", filter);
         model.addAttribute("user", user);
+        model.addAttribute("page", page);
+        model.addAttribute("url", "/main");
         return "main";
     }
+
     @PostMapping("/main")
     public String add(
             @AuthenticationPrincipal User user,
@@ -60,17 +70,19 @@ public class MainController {
             Model model,
             @RequestParam(value = "file") MultipartFile file) throws IOException {
         message.setAuthor(user);
-        if (bindingResult.hasErrors()){
+        if (bindingResult.hasErrors()) {
             Map<String, String> errorsMaps = ControllerUtils.getErrors(bindingResult);
             model.mergeAttributes(errorsMaps);
             model.addAttribute("message", message);
-        }else {
+        } else {
             saveFile(message, file);
             model.addAttribute("message", null);
             messageRepos.save(message);
         }
         Iterable<Message> messages = messageRepos.findAll();
         model.addAttribute("messages", messages);
+        //model.addAttribute("page", page);
+        model.addAttribute("url", "/main");
         return "main";
     }
 
@@ -89,14 +101,19 @@ public class MainController {
     }
 
     @PostMapping("filter")
-    public String filter(@RequestParam String filter, Map<String, Object> model){
-        Iterable<Message> messages;
-        if( filter != null && !filter.isEmpty()){
-            messages = messageRepos.findByTag(filter);
-        }else {
-            messages = messageRepos.findAll();
+    public String filter(
+            @RequestParam String filter,
+            Model model,
+            @PageableDefault(sort = {"id"}, direction = Sort.Direction.DESC) Pageable pageable) {
+        Page<Message> page;
+        if (filter != null && !filter.isEmpty()) {
+            page = messageRepos.findByTag(filter, pageable);
+        } else {
+            page = messageRepos.findAll(pageable);
         }
-        model.put("messages", messages);
+        model.addAttribute("messages", page);
+        model.addAttribute("page", page);
+        model.addAttribute("url", "/main");
         return "main";
     }
 
@@ -118,6 +135,7 @@ public class MainController {
 
         return "userMessages";
     }
+
     @PostMapping("/user-messages/{user}")
     public String updateMessage(
             @AuthenticationPrincipal User currentUser,
