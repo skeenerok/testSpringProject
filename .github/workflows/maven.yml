@@ -4,10 +4,12 @@
 name: Java CI with Maven
 
 on:
-  push:
-    branches: [ master ]
   pull_request:
-    branches: [ master ]
+    branches:
+      - '*'
+  push:
+    branches:
+      - 'master'
 
 jobs:
   build:
@@ -22,3 +24,5 @@ jobs:
         java-version: 14
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+    - name: Maven Verify
+      run: mvn -B clean test  "-Dtest=com.example.servingwebcontent.service.*Test"
