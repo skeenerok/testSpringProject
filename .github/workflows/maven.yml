@@ -22,7 +22,5 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 14
-    - name: Build with Maven
-      run: mvn -B package --file pom.xml
     - name: Maven Verify
       run: mvn -B clean test  "-Dtest=com.example.servingwebcontent.service.*Test"
