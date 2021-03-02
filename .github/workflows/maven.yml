@@ -42,4 +42,4 @@ jobs:
       with:
         java-version: 14
     - name: Maven Verify
-      run: mvn -B clean test  "-Dtest=com.example.servingwebcontent.service.*Test"
+      run: mvn -B clean test
