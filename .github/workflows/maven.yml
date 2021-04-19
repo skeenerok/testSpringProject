@@ -46,4 +46,4 @@ jobs:
     - name: show files
       run: ls
     - name: run app
-      run: java -jar $(pwd)/target/testSpring-1.0-SNAPSHOT.jar --spring.profiles.active=dev  --spring.config.location=$(pwd)/src/main/resources &
+      run: java -jar $(pwd)/target/testSpring-1.0-SNAPSHOT.jar --spring.profiles.active=dev  --spring.config.location=$(pwd)/src/main/resources/ &
