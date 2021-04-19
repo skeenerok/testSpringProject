@@ -46,4 +46,4 @@ jobs:
     - name: show files
       run: ls
     - name: run app
-      run: java -jar ./target/testSpring-1.0-SNAPSHOT.jar --spring.profiles.active=dev  --spring.config.location=./src/main/resources &
+      run: java -jar target/testSpring-1.0-SNAPSHOT.jar --spring.profiles.active=dev  --spring.config.location=src/main/resources &
