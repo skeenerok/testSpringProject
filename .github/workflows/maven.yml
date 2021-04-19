@@ -42,6 +42,8 @@ jobs:
       with:
         java-version: 14
     - name: Maven Verify
-      run: mvn -B clean test
+      run: mvn -B clean package
+    - name: show files
+      run: ls
     - name: run app
       run: java -jar ./target/testSpring-1.0-SNAPSHOT.jar --spring.profiles.active=dev  --spring.config.location=./src/main/resources &
