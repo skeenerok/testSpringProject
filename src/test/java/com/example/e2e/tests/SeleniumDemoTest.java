@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 
 import java.util.concurrent.TimeUnit;
 
-public class SeleniumDemo {
+public class SeleniumDemoTest {
     private WebDriver driver;
 
     @BeforeClass
@@ -23,7 +23,7 @@ public class SeleniumDemo {
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--headless");
+        //options.addArguments("--headless");
         driver = new ChromeDriver(options);
         driver.navigate().to("https://the-internet.herokuapp.com/login");
         driver.manage().window().maximize();
@@ -33,6 +33,21 @@ public class SeleniumDemo {
     @Test
     public void userLogin()
     {
+        driver.navigate().to("https://the-internet.herokuapp.com/login");
+        WebElement usernameTxt = driver.findElement(By.id("username"));
+        usernameTxt.sendKeys("tomsmith");
+        WebElement passwordTxt = driver.findElement(By.id("password"));
+        passwordTxt.sendKeys("SuperSecretPassword!");
+        WebElement submitBtn = driver.findElement(By.className("radius"));
+        submitBtn.click();
+        System.out.println("Current URL is:" + driver.getCurrentUrl());
+        Assert.assertTrue(driver.getCurrentUrl().contains("secure"));
+    }
+
+    @Test
+    public void userLoginLogin()
+    {
+        driver.navigate().to("https://localhost:8080/login");
         WebElement usernameTxt = driver.findElement(By.id("username"));
         usernameTxt.sendKeys("tomsmith");
         WebElement passwordTxt = driver.findElement(By.id("password"));
