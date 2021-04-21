@@ -41,9 +41,17 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: 14
-    - name: Maven Verify
-      run: mvn -B clean package
+    - name: Maven Integreation
+      run: mvn -B clean '-Dtest=com.example.servingwebcontent.**.*' package .**.*
     - name: show files
       run: ls
     - name: run app
       run: java -jar $(pwd)/target/testSpring-1.0-SNAPSHOT.jar --spring.profiles.active=dev  --spring.config.location=$(pwd)/src/main/resources/ &
+    - name: Start selenoid
+      uses: Xotabu4/selenoid-github-action@v1
+    - name: Install Google Chrome # Using shell script to install Google Chrome
+      run: |
+        chmod +x ./scripts/InstallChrome.sh
+         ./scripts/InstallChrome.sh
+    - name: Maven e2e
+      run: mvn -B '-Dtest=com.example.e2e.tests.*Test' test
