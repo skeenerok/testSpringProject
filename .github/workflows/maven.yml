@@ -55,4 +55,4 @@ jobs:
         sudo apt-get --only-upgrade install google-chrome-stable
         google-chrome --version
     - name: Maven e2e
-      run: mvn -B '-Dtest=com.example.e2e.tests.*Test' test
+      run: mvn -B '-Dtest=com.example.e2e.tests.SeleniumDemoTest' test
