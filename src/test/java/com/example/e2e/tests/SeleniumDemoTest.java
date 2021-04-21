@@ -6,6 +6,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
@@ -52,8 +55,9 @@ public class SeleniumDemoTest {
         usernameTxt.sendKeys("admin");
         WebElement passwordTxt = driver.findElement(By.cssSelector("[name=\"password\"]"));
         passwordTxt.sendKeys("123");
-        WebElement submitBtn = driver.findElement(By.cssSelector("[type=\"submit\"]"));
-        submitBtn.click();
+        new WebDriverWait(driver, 40)
+                .until(ExpectedConditions.elementToBeClickable(By.cssSelector("form[action=\"/login\"] [type=\"submit\"]")))
+                .click();
     }
 
     @AfterClass
