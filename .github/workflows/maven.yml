@@ -42,7 +42,7 @@ jobs:
       with:
         java-version: 14
     - name: Maven Integreation
-      run: mvn -B clean '-Dtest=com.example.servingwebcontent.**.*' package .**.*
+      run: mvn -B clean '-Dtest=com.example.servingwebcontent.**.*' package
     - name: show files
       run: ls
     - name: run app
