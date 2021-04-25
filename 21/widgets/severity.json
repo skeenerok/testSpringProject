@@ -1,0 +1,21 @@
+[ {
+  "uid" : "2cbfcc98634d30b1",
+  "name" : "userLoginLogin",
+  "time" : {
+    "start" : 1619372489955,
+    "stop" : 1619372491868,
+    "duration" : 1913
+  },
+  "status" : "passed",
+  "severity" : "normal"
+}, {
+  "uid" : "710172e28d08704b",
+  "name" : "userLogin",
+  "time" : {
+    "start" : 1619372488841,
+    "stop" : 1619372489675,
+    "duration" : 834
+  },
+  "status" : "passed",
+  "severity" : "normal"
+} ]
