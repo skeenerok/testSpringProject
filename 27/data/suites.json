@@ -1,0 +1,43 @@
+{
+  "uid" : "98d3104e051c652961429bf95fa0b5d6",
+  "children" : [ {
+    "name" : "Surefire suite",
+    "children" : [ {
+      "name" : "Surefire test",
+      "children" : [ {
+        "name" : "com.example.e2e.tests.SeleniumDemoTest",
+        "children" : [ {
+          "name" : "userLogin",
+          "uid" : "38204934bf5f63b1",
+          "parentUid" : "714b4e02eaf97053ad75bbc1373bb2d7",
+          "status" : "passed",
+          "time" : {
+            "start" : 1619376992170,
+            "stop" : 1619376992965,
+            "duration" : 795
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        }, {
+          "name" : "userLoginLogin",
+          "uid" : "1cad1bb4e0510666",
+          "parentUid" : "714b4e02eaf97053ad75bbc1373bb2d7",
+          "status" : "passed",
+          "time" : {
+            "start" : 1619376993197,
+            "stop" : 1619376995133,
+            "duration" : 1936
+          },
+          "flaky" : false,
+          "newFailed" : false,
+          "parameters" : [ ]
+        } ],
+        "uid" : "714b4e02eaf97053ad75bbc1373bb2d7"
+      } ],
+      "uid" : "1fcb2e6ec8e5b5e8a1f2a70b87c80b24"
+    } ],
+    "uid" : "940a09faf31371a51747026c9d178f0a"
+  } ],
+  "name" : "suites"
+}
