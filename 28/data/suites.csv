@@ -1,0 +1,3 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"passed","Sun Apr 25 19:23:03 GMT 2021","Sun Apr 25 19:23:04 GMT 2021","708","Surefire suite","Surefire test","com.example.e2e.tests.SeleniumDemoTest","com.example.e2e.tests.SeleniumDemoTest","userLogin","userLogin",""
+"passed","Sun Apr 25 19:23:04 GMT 2021","Sun Apr 25 19:23:06 GMT 2021","1914","Surefire suite","Surefire test","com.example.e2e.tests.SeleniumDemoTest","com.example.e2e.tests.SeleniumDemoTest","userLoginLogin","userLoginLogin",""
