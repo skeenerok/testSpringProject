@@ -1,0 +1,10 @@
+[ {
+  "name" : "GitHub Actions",
+  "type" : "github",
+  "url" : "https://skeenerok.github.io/testSpringProject",
+  "buildOrder" : 22,
+  "buildName" : "GitHub Actions Run #783238618",
+  "buildUrl" : "https://github.com/skeenerok/testSpringProject/actions/runs/783238618",
+  "reportName" : "Allure Report with history",
+  "reportUrl" : "https://skeenerok.github.io/testSpringProject/22/"
+} ]

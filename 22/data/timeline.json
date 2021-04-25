@@ -1,0 +1,39 @@
+{
+  "uid" : "ab17fc5a4eb3bca4b216b548c7f9fcbc",
+  "children" : [ {
+    "name" : "fv-az200-885",
+    "children" : [ {
+      "name" : "6126@fv-az200-885.main(1)",
+      "children" : [ {
+        "name" : "userLogin",
+        "uid" : "789e2184e44a1919",
+        "parentUid" : "87dbe4227757bf98b809479c7a552411",
+        "status" : "passed",
+        "time" : {
+          "start" : 1619373775814,
+          "stop" : 1619373776613,
+          "duration" : 799
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "userLoginLogin",
+        "uid" : "28a8d2a3061a735e",
+        "parentUid" : "87dbe4227757bf98b809479c7a552411",
+        "status" : "passed",
+        "time" : {
+          "start" : 1619373776859,
+          "stop" : 1619373778687,
+          "duration" : 1828
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "87dbe4227757bf98b809479c7a552411"
+    } ],
+    "uid" : "95a581c1b0b30f94614ba0da1fa254e6"
+  } ],
+  "name" : "timeline"
+}

@@ -1,0 +1,114 @@
+{
+  "uid" : "789e2184e44a1919",
+  "name" : "userLogin",
+  "fullName" : "com.example.e2e.tests.SeleniumDemoTest.userLogin",
+  "historyId" : "654ee88e695e2f2f41a0982f38944714",
+  "time" : {
+    "start" : 1619373775814,
+    "stop" : 1619373776613,
+    "duration" : 799
+  },
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "setUp",
+    "time" : {
+      "start" : 1619373760028,
+      "stop" : 1619373775717,
+      "duration" : 15689
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "afterStages" : [ {
+    "name" : "tearDown",
+    "time" : {
+      "start" : 1619373778689,
+      "stop" : 1619373778764,
+      "duration" : 75
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "com.example.e2e.tests.SeleniumDemoTest"
+  }, {
+    "name" : "testClass",
+    "value" : "com.example.e2e.tests.SeleniumDemoTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "userLogin"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Surefire suite"
+  }, {
+    "name" : "suite",
+    "value" : "Surefire test"
+  }, {
+    "name" : "subSuite",
+    "value" : "com.example.e2e.tests.SeleniumDemoTest"
+  }, {
+    "name" : "host",
+    "value" : "fv-az200-885"
+  }, {
+    "name" : "thread",
+    "value" : "6126@fv-az200-885.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 0,
+        "skipped" : 0,
+        "passed" : 2,
+        "unknown" : 0,
+        "total" : 2
+      },
+      "items" : [ {
+        "uid" : "710172e28d08704b",
+        "reportUrl" : "https://skeenerok.github.io/testSpringProject/21//#testresult/710172e28d08704b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1619372488841,
+          "stop" : 1619372489675,
+          "duration" : 834
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "789e2184e44a1919.json",
+  "parameterValues" : [ ]
+}
