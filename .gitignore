@@ -3,3 +3,4 @@
 target
 allure-results
 build
+.allure
