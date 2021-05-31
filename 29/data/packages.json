@@ -1,0 +1,35 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "children" : [ {
+    "name" : "com.example.e2e.tests.SeleniumDemoTest",
+    "children" : [ {
+      "name" : "userLogin",
+      "uid" : "cf831b298ebd4b1b",
+      "parentUid" : "1b18f9c3d2c0c1b4be8f9253492cdfa6",
+      "status" : "passed",
+      "time" : {
+        "start" : 1622480669068,
+        "stop" : 1622480669575,
+        "duration" : 507
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "userLoginLogin",
+      "uid" : "526edb44b486bbe0",
+      "parentUid" : "1b18f9c3d2c0c1b4be8f9253492cdfa6",
+      "status" : "passed",
+      "time" : {
+        "start" : 1622480669747,
+        "stop" : 1622480671391,
+        "duration" : 1644
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "com.example.e2e.tests.SeleniumDemoTest"
+  } ],
+  "name" : "packages"
+}
