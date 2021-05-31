@@ -1,0 +1,67 @@
+package com.example.util;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.*;
+
+import java.awt.image.BufferedImage;
+import java.util.List;
+import java.util.Map;
+
+public class TestListener implements ITestListener {
+
+    @Override
+    public void onTestStart(ITestResult result) {
+        Reporter.log("[STARTED] " + getName(result.getMethod()), true);
+    }
+
+    @Override
+    public void onTestSuccess(ITestResult result) {
+        Reporter.log("[PASSED] " +  getName(result.getMethod()), true);
+    }
+
+    @Override
+    public void onTestFailure(ITestResult result) {
+        Reporter.log("[FAILED] " +  getName(result.getMethod()), true);
+        try {
+            WebDriver driver = ((IDriverSupplier) result.getInstance()).getDriver();
+            if (driver != null) {
+                AttachmentHelper.addScreenshot("failed_" + result.getMethod().getMethodName(), driver);
+                Reporter.log("Failed at: " + driver.getCurrentUrl(), true);
+            }
+            attachTestArtifacts(result);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    @Override
+    public void onTestSkipped(ITestResult result) {
+        Reporter.log("[SKIPPED] " +  getName(result.getMethod()), true);
+    }
+
+    @Override
+    public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
+    }
+
+    @Override
+    public void onStart(ITestContext context) {
+    }
+
+    @Override
+    public void onFinish(ITestContext context) {
+    }
+
+    private static void attachTestArtifacts(ITestResult result) {
+        List<Map<String, BufferedImage>> artifacts = ((ITestArtifactProvider) result.getInstance()).getArtifacts();
+        if (artifacts != null && artifacts.size() > 0) {
+            artifacts.forEach(map -> map.forEach( (String key, BufferedImage image) -> {
+                Reporter.log("[INFO] Attaching to the report: " + key, true);
+                AttachmentHelper.addScreenshot(key, image);
+            }));
+        }
+    }
+
+    private String getName(ITestNGMethod method) {
+        return method.getMethodName() + " (" + method.getRealClass() + ")";
+    }
+}

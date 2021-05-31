@@ -60,7 +60,9 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get --only-upgrade install google-chrome-stable
+        sudo apt-get install ffmpeg
         google-chrome --version
+        ffmpeg
     - name: Maven e2e
       if: always()
       run: mvn -B '-Dtest=com.example.e2e.tests.SeleniumDemoTest' test
@@ -70,10 +72,10 @@ jobs:
       #with:
         # Optional: do not specify to match Chrome's version
         #chromedriver-version: '90.0.4430.24'
-      #- run: |
-        #export DISPLAY=:99
+      - run: |
+        export DISPLAY=:99
         #chromedriver --url-base=/wd/hub &
-        #sudo Xvfb -ac :99 -screen 0 1920x1080x24 > /dev/null 2>&1 & # optional
+        sudo Xvfb -ac :99 -screen 0 1920x1080x24 > /dev/null 2>&1 & # optional
 
     - name: Get Allure history
       uses: actions/checkout@v2
