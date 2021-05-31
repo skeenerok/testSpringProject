@@ -37,9 +37,76 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - uses: actions/cache@v1
+      with:
+        path: |
+          ~/.m2/repository
+        key: ${{ runner.os }}-${{ github.workflow }}-${{ hashFiles('**/pom.xml') }}
+        restore-keys: |
+          ${{ runner.os }}-${{ github.workflow }}-
     - name: Set up JDK 14
       uses: actions/setup-java@v1
       with:
         java-version: 14
-    - name: Maven Verify
-      run: mvn -B clean test
+    - name: Maven Integreation
+      run: mvn -B clean '-Dtest=com.example.servingwebcontent.**.*' package
+    - name: show files
+      run: ls
+    - name: run app
+      run: java -jar $(pwd)/target/testSpring-1.0-SNAPSHOT.jar --spring.profiles.active=dev  --spring.config.location=$(pwd)/src/main/resources/ &
+    - name: Start selenoid
+      uses: Xotabu4/selenoid-github-action@v1
+    - name: Install Google Chrome # Using shell script to install Google Chrome
+      run: |
+        sudo apt-get update
+        sudo apt-get --only-upgrade install google-chrome-stable
+        google-chrome --version
+    - name: Maven e2e
+      if: always()
+      run: mvn -B '-Dtest=com.example.e2e.tests.SeleniumDemoTest' test
+      continue-on-error: true
+
+      #- uses: nanasess/setup-chromedriver@master
+      #with:
+        # Optional: do not specify to match Chrome's version
+        #chromedriver-version: '90.0.4430.24'
+      #- run: |
+        #export DISPLAY=:99
+        #chromedriver --url-base=/wd/hub &
+        #sudo Xvfb -ac :99 -screen 0 1920x1080x24 > /dev/null 2>&1 & # optional
+
+    - name: Get Allure history
+      uses: actions/checkout@v2
+      if: always()
+      continue-on-error: true
+      with:
+        ref: gh-pages
+        path: gh-pages
+
+    - name: Allure Report action from marketplace
+      uses: simple-elf/allure-report-action@master
+      if: always()
+      id: allure-report
+      with:
+        allure_results: target/allure-results
+        gh_pages: gh-pages
+        allure_report: allure-report
+        allure_history: allure-history
+
+    - name: Deploy report to Github Pages
+      if: always()
+      uses: peaceiris/actions-gh-pages@v2
+      env:
+        PERSONAL_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        PUBLISH_BRANCH: gh-pages
+        PUBLISH_DIR: allure-history
+
+    - name: Post the link to the report
+      if: always()
+      uses: Sibz/github-status-action@v1
+      with:
+        authToken: ${{secrets.GITHUB_TOKEN}}
+        context: 'Test report'
+        state: 'success'
+        sha: ${{ github.event.pull_request.head.sha }}
+        target_url: https://skeenerok.github.io/testSpringProject/${{ github.run_number }}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="e2e tests of the pet project" verbose="1">
+    <test name="1 test pack">
+        <parameter name="browser" value="chrome"/>
+        <parameter name="base_url" value="https://localhost:8080"/>
+        <packages>
+            <package name="com.example.e2e.tests"/>
+        </packages>
+    </test>
+</suite>
