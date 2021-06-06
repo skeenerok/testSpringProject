@@ -1,0 +1,41 @@
+[ {
+  "uid" : "e459b2e6a00b3f41",
+  "name" : "newFeature1",
+  "time" : {
+    "start" : 1622974432399,
+    "stop" : 1622974432400,
+    "duration" : 1
+  },
+  "status" : "unknown",
+  "severity" : "normal"
+}, {
+  "uid" : "dd4f8033b6af088f",
+  "name" : "userLoginIncorrect",
+  "time" : {
+    "start" : 1622974447528,
+    "stop" : 1622974447528,
+    "duration" : 0
+  },
+  "status" : "broken",
+  "severity" : "critical"
+}, {
+  "uid" : "91ebb0b71bc0930d",
+  "name" : "setUp",
+  "time" : {
+    "start" : 1622974435106,
+    "stop" : 1622974435109,
+    "duration" : 3
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "fb557dcc82b44dad",
+  "name" : "userLogin",
+  "time" : {
+    "start" : 1622974441455,
+    "stop" : 1622974441456,
+    "duration" : 1
+  },
+  "status" : "broken",
+  "severity" : "critical"
+} ]
