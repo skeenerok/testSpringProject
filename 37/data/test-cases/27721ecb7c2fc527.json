@@ -1,0 +1,373 @@
+{
+  "uid" : "27721ecb7c2fc527",
+  "name" : "userLogin",
+  "fullName" : "com.example.e2e.tests.SeleniumDemoTest.userLogin",
+  "historyId" : "654ee88e695e2f2f41a0982f38944714",
+  "time" : {
+    "start" : 1622978406610,
+    "stop" : 1622978408244,
+    "duration" : 1634
+  },
+  "description" : "Use correct login",
+  "descriptionHtml" : "<p>Use correct login</p>\n",
+  "status" : "passed",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ {
+    "name" : "setUp",
+    "time" : {
+      "start" : 1622978399516,
+      "stop" : 1622978406124,
+      "duration" : 6608
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "testStage" : {
+    "description" : "Use correct login",
+    "status" : "passed",
+    "steps" : [ {
+      "name" : "$(\"open\") https://the-internet.herokuapp.com/login",
+      "time" : {
+        "start" : 1622978406624,
+        "stop" : 1622978406788,
+        "duration" : 164
+      },
+      "status" : "passed",
+      "steps" : [ ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 0,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : false
+    }, {
+      "name" : "setName",
+      "time" : {
+        "start" : 1622978406826,
+        "stop" : 1622978407447,
+        "duration" : 621
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "$(\"#username\") should(exist)",
+        "time" : {
+          "start" : 1622978406967,
+          "stop" : 1622978407211,
+          "duration" : 244
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "$(\"#username\") set value(tomsmith)",
+        "time" : {
+          "start" : 1622978407211,
+          "stop" : 1622978407446,
+          "duration" : 235
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "name",
+        "value" : "tomsmith"
+      } ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "setPassword",
+      "time" : {
+        "start" : 1622978407447,
+        "stop" : 1622978407805,
+        "duration" : 358
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "$(\"#password\") should(exist)",
+        "time" : {
+          "start" : 1622978407447,
+          "stop" : 1622978407550,
+          "duration" : 103
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "$(\"#password\") set value(SuperSecretPassword)",
+        "time" : {
+          "start" : 1622978407551,
+          "stop" : 1622978407805,
+          "duration" : 254
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ {
+        "name" : "password",
+        "value" : "SuperSecretPassword"
+      } ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    }, {
+      "name" : "submit",
+      "time" : {
+        "start" : 1622978407805,
+        "stop" : 1622978408243,
+        "duration" : 438
+      },
+      "status" : "passed",
+      "steps" : [ {
+        "name" : "$(\".radius\") should(exist)",
+        "time" : {
+          "start" : 1622978407806,
+          "stop" : 1622978407909,
+          "duration" : 103
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      }, {
+        "name" : "$(\".radius\") click()",
+        "time" : {
+          "start" : 1622978407909,
+          "stop" : 1622978408243,
+          "duration" : 334
+        },
+        "status" : "passed",
+        "steps" : [ ],
+        "attachments" : [ ],
+        "parameters" : [ ],
+        "stepsCount" : 0,
+        "attachmentsCount" : 0,
+        "shouldDisplayMessage" : false,
+        "hasContent" : false
+      } ],
+      "attachments" : [ ],
+      "parameters" : [ ],
+      "stepsCount" : 2,
+      "attachmentsCount" : 0,
+      "shouldDisplayMessage" : false,
+      "hasContent" : true
+    } ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 10,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : true
+  },
+  "afterStages" : [ {
+    "name" : "tearDown",
+    "time" : {
+      "start" : 1622978410946,
+      "stop" : 1622978411021,
+      "duration" : 75
+    },
+    "description" : "",
+    "status" : "passed",
+    "steps" : [ ],
+    "attachments" : [ ],
+    "parameters" : [ ],
+    "stepsCount" : 0,
+    "attachmentsCount" : 0,
+    "shouldDisplayMessage" : false,
+    "hasContent" : false
+  } ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "com.example.e2e.tests.SeleniumDemoTest"
+  }, {
+    "name" : "testClass",
+    "value" : "com.example.e2e.tests.SeleniumDemoTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "userLogin"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Surefire suite"
+  }, {
+    "name" : "suite",
+    "value" : "Surefire test"
+  }, {
+    "name" : "subSuite",
+    "value" : "com.example.e2e.tests.SeleniumDemoTest"
+  }, {
+    "name" : "host",
+    "value" : "fv-az91-716"
+  }, {
+    "name" : "thread",
+    "value" : "5745@fv-az91-716.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "story",
+    "value" : "Demo login test"
+  }, {
+    "name" : "severity",
+    "value" : "critical"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "critical",
+    "retries" : [ ],
+    "categories" : [ ],
+    "history" : {
+      "statistic" : {
+        "failed" : 0,
+        "broken" : 3,
+        "skipped" : 0,
+        "passed" : 8,
+        "unknown" : 0,
+        "total" : 11
+      },
+      "items" : [ {
+        "uid" : "85fa83a2027a8994",
+        "reportUrl" : "https://skeenerok.github.io/testSpringProject/36//#testresult/85fa83a2027a8994",
+        "status" : "passed",
+        "time" : {
+          "start" : 1622976443203,
+          "stop" : 1622976444878,
+          "duration" : 1675
+        }
+      }, {
+        "uid" : "a5182dc415836e35",
+        "reportUrl" : "https://skeenerok.github.io/testSpringProject/35//#testresult/a5182dc415836e35",
+        "status" : "broken",
+        "statusDetails" : "\nNo X11 DISPLAY variable was set,\nbut this program performed an operation which requires it.",
+        "time" : {
+          "start" : 1622975728441,
+          "stop" : 1622975728442,
+          "duration" : 1
+        }
+      }, {
+        "uid" : "fb557dcc82b44dad",
+        "reportUrl" : "https://skeenerok.github.io/testSpringProject/34//#testresult/fb557dcc82b44dad",
+        "status" : "broken",
+        "statusDetails" : "\nNo X11 DISPLAY variable was set,\nbut this program performed an operation which requires it.",
+        "time" : {
+          "start" : 1622974441455,
+          "stop" : 1622974441456,
+          "duration" : 1
+        }
+      }, {
+        "uid" : "45d0425e36e7943b",
+        "reportUrl" : "https://skeenerok.github.io/testSpringProject/33//#testresult/45d0425e36e7943b",
+        "status" : "broken",
+        "statusDetails" : "\nNo X11 DISPLAY variable was set,\nbut this program performed an operation which requires it.",
+        "time" : {
+          "start" : 1622973839037,
+          "stop" : 1622973839038,
+          "duration" : 1
+        }
+      }, {
+        "uid" : "cf831b298ebd4b1b",
+        "reportUrl" : "https://skeenerok.github.io/testSpringProject/29//#testresult/cf831b298ebd4b1b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1622480669068,
+          "stop" : 1622480669575,
+          "duration" : 507
+        }
+      }, {
+        "uid" : "422e52cde461e63e",
+        "reportUrl" : "https://skeenerok.github.io/testSpringProject/28//#testresult/422e52cde461e63e",
+        "status" : "passed",
+        "time" : {
+          "start" : 1619378583292,
+          "stop" : 1619378584000,
+          "duration" : 708
+        }
+      }, {
+        "uid" : "38204934bf5f63b1",
+        "reportUrl" : "https://skeenerok.github.io/testSpringProject/27//#testresult/38204934bf5f63b1",
+        "status" : "passed",
+        "time" : {
+          "start" : 1619376992170,
+          "stop" : 1619376992965,
+          "duration" : 795
+        }
+      }, {
+        "uid" : "9cefad2e602b1c73",
+        "reportUrl" : "https://skeenerok.github.io/testSpringProject/26//#testresult/9cefad2e602b1c73",
+        "status" : "passed",
+        "time" : {
+          "start" : 1619376282698,
+          "stop" : 1619376283270,
+          "duration" : 572
+        }
+      }, {
+        "uid" : "789e2184e44a1919",
+        "reportUrl" : "https://skeenerok.github.io/testSpringProject/22//#testresult/789e2184e44a1919",
+        "status" : "passed",
+        "time" : {
+          "start" : 1619373775814,
+          "stop" : 1619373776613,
+          "duration" : 799
+        }
+      }, {
+        "uid" : "710172e28d08704b",
+        "reportUrl" : "https://skeenerok.github.io/testSpringProject/21//#testresult/710172e28d08704b",
+        "status" : "passed",
+        "time" : {
+          "start" : 1619372488841,
+          "stop" : 1619372489675,
+          "duration" : 834
+        }
+      } ]
+    },
+    "tags" : [ ]
+  },
+  "source" : "27721ecb7c2fc527.json",
+  "parameterValues" : [ ]
+}
