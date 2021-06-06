@@ -17,5 +17,5 @@
 
     # Set the logger level of File Appender to DEBUG
     log4j.logger.com.automation.remarks.video.recorder=DEBUG, FA
-    log4j.additivity.com.automation.remarks.video.recorder=false
+    log4j.additivity.com.automation.remarks.video.recorder=true
 </configuration>

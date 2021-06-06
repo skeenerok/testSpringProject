@@ -4,3 +4,5 @@ target
 allure-results
 build
 .allure
+ffmpeg.log
+video
