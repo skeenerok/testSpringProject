@@ -67,9 +67,10 @@ jobs:
       #with:
         #Optional: do not specify to match Chrome's version
         #chromedriver-version: '90.0.4430.24'
-    - run: |
-        if: always()
-        export DISPLAY=:99
+    - name: Install DISPLAY
+      if: always()
+      run: |
+        sudo export DISPLAY=:99
         sudo Xvfb -ac :99 -screen 0 1920x1080x24 > /dev/null 2>&1 &
 
     - name: Maven e2e
