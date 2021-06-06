@@ -54,28 +54,27 @@ jobs:
       run: ls
     - name: run app
       run: java -jar $(pwd)/target/testSpring-1.0-SNAPSHOT.jar --spring.profiles.active=dev  --spring.config.location=$(pwd)/src/main/resources/ &
-    - name: Start selenoid
-      uses: Xotabu4/selenoid-github-action@v1
+    #- name: Start selenoid
+    #  uses: Xotabu4/selenoid-github-action@v1
     - name: Install Google Chrome # Using shell script to install Google Chrome
       run: |
         sudo apt-get update
-        sudo apt-get --only-upgrade install google-chrome-stable
-        sudo apt-get install ffmpeg
-        google-chrome --version
-        ffmpeg
-      #- uses: nanasess/setup-chromedriver@master
+        sudo apt-get install ffmpeg || echo 1
+        google-chrome --version || echo 1
+        ffmpeg || echo 1
+    - name: setup drivers
+      uses: nanasess/setup-chromedriver@master
       #with:
-      # Optional: do not specify to match Chrome's version
-      #chromedriver-version: '90.0.4430.24'
+        #Optional: do not specify to match Chrome's version
+        #chromedriver-version: '90.0.4430.24'
     - run: |
+        if: always()
         export DISPLAY=:99
-        sudo Xvfb -ac :99 -screen 0 1920x1080x24 > /dev/null 2>&1 & # optional
+        sudo Xvfb -ac :99 -screen 0 1920x1080x24 > /dev/null 2>&1 &
 
     - name: Maven e2e
       if: always()
-      run: mvn -B '-Dtest=com.example.e2e.tests.SeleniumDemoTest' test \
-        -Dvideo.enabled=true
-        -Dvideo.mode=ALL
+      run: mvn -B '-Dtest=com.example.e2e.tests.SeleniumDemoTest' test  -Dvideo.enabled=true -Dvideo.mode=ALL
       continue-on-error: true
     - name: Get Allure history
       uses: actions/checkout@v2
