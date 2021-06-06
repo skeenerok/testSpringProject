@@ -75,7 +75,9 @@ jobs:
         #chromedriver-version: '90.0.4430.24'
     - name: Maven e2e
       if: always()
-      run: xvfb-run --auto-servernum  mvn -B '-Dtest=com.example.e2e.tests.SeleniumDemoTest' test  -Dvideo.enabled=true -Dvideo.mode=ALL -Dvideo.save.mode=ALL -Drecorder.type=FFMPEG
+      run: |
+        xvfb-run --auto-servernum  mvn -B '-Dtest=com.example.e2e.tests.SeleniumDemoTest' test  -Dvideo.enabled=true \
+        -Dvideo.mode=ALL -Dvideo.save.mode=ALL -Drecorder.type=FFMPEG -Dvideo.screen.size=1920x1080 -Dffmpeg.display=:0.0 ;
       continue-on-error: true
     - name: Get Allure history
       uses: actions/checkout@v2
