@@ -1,0 +1,65 @@
+{
+  "uid" : "1e9df770dcaa347c",
+  "name" : "newFeature1",
+  "fullName" : "com.example.e2e.tests.SeleniumDemoTest.newFeature1",
+  "historyId" : "e28128e3d3a106c9fc250414407844a9",
+  "time" : {
+    "start" : 1622973827348,
+    "stop" : 1622973827351,
+    "duration" : 3
+  },
+  "status" : "unknown",
+  "flaky" : false,
+  "newFailed" : false,
+  "beforeStages" : [ ],
+  "afterStages" : [ ],
+  "labels" : [ {
+    "name" : "package",
+    "value" : "com.example.e2e.tests.SeleniumDemoTest"
+  }, {
+    "name" : "testClass",
+    "value" : "com.example.e2e.tests.SeleniumDemoTest"
+  }, {
+    "name" : "testMethod",
+    "value" : "newFeature1"
+  }, {
+    "name" : "parentSuite",
+    "value" : "Surefire suite"
+  }, {
+    "name" : "suite",
+    "value" : "Surefire test"
+  }, {
+    "name" : "subSuite",
+    "value" : "com.example.e2e.tests.SeleniumDemoTest"
+  }, {
+    "name" : "host",
+    "value" : "fv-az99-468"
+  }, {
+    "name" : "thread",
+    "value" : "5605@fv-az99-468.main(1)"
+  }, {
+    "name" : "framework",
+    "value" : "testng"
+  }, {
+    "name" : "language",
+    "value" : "java"
+  }, {
+    "name" : "story",
+    "value" : "newFeature1"
+  }, {
+    "name" : "resultFormat",
+    "value" : "allure2"
+  } ],
+  "parameters" : [ ],
+  "links" : [ ],
+  "hidden" : false,
+  "retry" : false,
+  "extra" : {
+    "severity" : "normal",
+    "retries" : [ ],
+    "categories" : [ ],
+    "tags" : [ ]
+  },
+  "source" : "1e9df770dcaa347c.json",
+  "parameterValues" : [ ]
+}
