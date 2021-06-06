@@ -60,6 +60,7 @@ jobs:
       run: |
         sudo apt-get update
         sudo apt-get install ffmpeg || echo 1
+        sudo apt-get install x11vnc || echo 1
         google-chrome --version || echo 1
         ffmpeg || echo 1
     - name: Setup xvfb (Linux)
@@ -77,7 +78,7 @@ jobs:
       if: always()
       run: |
         xvfb-run --auto-servernum  mvn -B '-Dtest=com.example.e2e.tests.SeleniumDemoTest' test  -Dvideo.enabled=true \
-        -Dvideo.mode=ALL -Dvideo.save.mode=ALL -Drecorder.type=FFMPEG -Dvideo.screen.size=1920x1080 -Dffmpeg.display=:0.0 ;
+        -Dvideo.mode=ALL -Dvideo.save.mode=ALL -Drecorder.type=FFMPEG -Dvideo.screen.size=1920x1080 -Dffmpeg.display=:0.0 -Dffmpeg.format=x11grab
       continue-on-error: true
     - name: Get Allure history
       uses: actions/checkout@v2
