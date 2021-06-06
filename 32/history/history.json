@@ -1,0 +1,132 @@
+{
+  "654ee88e695e2f2f41a0982f38944714" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 6,
+      "unknown" : 0,
+      "total" : 6
+    },
+    "items" : [ {
+      "uid" : "cf831b298ebd4b1b",
+      "reportUrl" : "https://skeenerok.github.io/testSpringProject/29//#testresult/cf831b298ebd4b1b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1622480669068,
+        "stop" : 1622480669575,
+        "duration" : 507
+      }
+    }, {
+      "uid" : "422e52cde461e63e",
+      "reportUrl" : "https://skeenerok.github.io/testSpringProject/28//#testresult/422e52cde461e63e",
+      "status" : "passed",
+      "time" : {
+        "start" : 1619378583292,
+        "stop" : 1619378584000,
+        "duration" : 708
+      }
+    }, {
+      "uid" : "38204934bf5f63b1",
+      "reportUrl" : "https://skeenerok.github.io/testSpringProject/27//#testresult/38204934bf5f63b1",
+      "status" : "passed",
+      "time" : {
+        "start" : 1619376992170,
+        "stop" : 1619376992965,
+        "duration" : 795
+      }
+    }, {
+      "uid" : "9cefad2e602b1c73",
+      "reportUrl" : "https://skeenerok.github.io/testSpringProject/26//#testresult/9cefad2e602b1c73",
+      "status" : "passed",
+      "time" : {
+        "start" : 1619376282698,
+        "stop" : 1619376283270,
+        "duration" : 572
+      }
+    }, {
+      "uid" : "789e2184e44a1919",
+      "reportUrl" : "https://skeenerok.github.io/testSpringProject/22//#testresult/789e2184e44a1919",
+      "status" : "passed",
+      "time" : {
+        "start" : 1619373775814,
+        "stop" : 1619373776613,
+        "duration" : 799
+      }
+    }, {
+      "uid" : "710172e28d08704b",
+      "reportUrl" : "https://skeenerok.github.io/testSpringProject/21//#testresult/710172e28d08704b",
+      "status" : "passed",
+      "time" : {
+        "start" : 1619372488841,
+        "stop" : 1619372489675,
+        "duration" : 834
+      }
+    } ]
+  },
+  "f7107bd4cc0b715d8ed352b3b97bb2c1" : {
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 6,
+      "unknown" : 0,
+      "total" : 6
+    },
+    "items" : [ {
+      "uid" : "526edb44b486bbe0",
+      "reportUrl" : "https://skeenerok.github.io/testSpringProject/29//#testresult/526edb44b486bbe0",
+      "status" : "passed",
+      "time" : {
+        "start" : 1622480669747,
+        "stop" : 1622480671391,
+        "duration" : 1644
+      }
+    }, {
+      "uid" : "1b6605c21e2854ac",
+      "reportUrl" : "https://skeenerok.github.io/testSpringProject/28//#testresult/1b6605c21e2854ac",
+      "status" : "passed",
+      "time" : {
+        "start" : 1619378584308,
+        "stop" : 1619378586222,
+        "duration" : 1914
+      }
+    }, {
+      "uid" : "1cad1bb4e0510666",
+      "reportUrl" : "https://skeenerok.github.io/testSpringProject/27//#testresult/1cad1bb4e0510666",
+      "status" : "passed",
+      "time" : {
+        "start" : 1619376993197,
+        "stop" : 1619376995133,
+        "duration" : 1936
+      }
+    }, {
+      "uid" : "72db7afba1f3d979",
+      "reportUrl" : "https://skeenerok.github.io/testSpringProject/26//#testresult/72db7afba1f3d979",
+      "status" : "passed",
+      "time" : {
+        "start" : 1619376283489,
+        "stop" : 1619376285106,
+        "duration" : 1617
+      }
+    }, {
+      "uid" : "28a8d2a3061a735e",
+      "reportUrl" : "https://skeenerok.github.io/testSpringProject/22//#testresult/28a8d2a3061a735e",
+      "status" : "passed",
+      "time" : {
+        "start" : 1619373776859,
+        "stop" : 1619373778687,
+        "duration" : 1828
+      }
+    }, {
+      "uid" : "2cbfcc98634d30b1",
+      "reportUrl" : "https://skeenerok.github.io/testSpringProject/21//#testresult/2cbfcc98634d30b1",
+      "status" : "passed",
+      "time" : {
+        "start" : 1619372489955,
+        "stop" : 1619372491868,
+        "duration" : 1913
+      }
+    } ]
+  }
+}
