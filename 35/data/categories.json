@@ -1,0 +1,56 @@
+{
+  "uid" : "4b4757e66a1912dae1a509f688f20b0f",
+  "children" : [ {
+    "name" : "Test defects",
+    "children" : [ {
+      "name" : "unknown error: Chrome failed to start: exited abnormally.\n  (unknown error: DevToolsActivePort file doesn't exist)\n  (The process started from chrome location /usr/bin/google-chrome is no longer running, so ChromeDriver is assuming that Chrome has crashed.)\nBuild info: version: '3.141.59', revision: 'e82be7d358', time: '2018-11-14T08:17:03'\nSystem info: host: 'fv-az96-164', ip: '10.1.0.54', os.name: 'Linux', os.arch: 'amd64', os.version: '5.4.0-1047-azure', java.version: '14.0.2'\nDriver info: driver.version: ChromeDriver\nremote stacktrace: #0 0x561658ef2ee9 <unknown>\n",
+      "children" : [ {
+        "name" : "setUp",
+        "uid" : "a7e904c9e9f66b51",
+        "parentUid" : "625c736c5f55314a8d325047bc8cd631",
+        "status" : "broken",
+        "time" : {
+          "start" : 1622975722120,
+          "stop" : 1622975722122,
+          "duration" : 2
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "625c736c5f55314a8d325047bc8cd631"
+    }, {
+      "name" : "\nNo X11 DISPLAY variable was set,\nbut this program performed an operation which requires it.",
+      "children" : [ {
+        "name" : "userLogin",
+        "uid" : "a5182dc415836e35",
+        "parentUid" : "18ce9d63200ccea057adf6638672a976",
+        "status" : "broken",
+        "time" : {
+          "start" : 1622975728441,
+          "stop" : 1622975728442,
+          "duration" : 1
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      }, {
+        "name" : "userLoginIncorrect",
+        "uid" : "aacb1880539371a",
+        "parentUid" : "18ce9d63200ccea057adf6638672a976",
+        "status" : "broken",
+        "time" : {
+          "start" : 1622975734499,
+          "stop" : 1622975734499,
+          "duration" : 0
+        },
+        "flaky" : false,
+        "newFailed" : false,
+        "parameters" : [ ]
+      } ],
+      "uid" : "18ce9d63200ccea057adf6638672a976"
+    } ],
+    "uid" : "bdbf199525818fae7a8651db9eafe741"
+  } ],
+  "name" : "categories"
+}
