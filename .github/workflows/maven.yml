@@ -68,7 +68,7 @@ jobs:
       run: |
         sudo apt-get install -y xvfb libxkbcommon-x11-0 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-randr0 libxcb-render-util0 libxcb-xinerama0 libxcb-xinput0 libxcb-xfixes0
         # start xvfb on (default) display :0
-        sudo /usr/bin/Xvfb $DISPLAY -screen 0 1920x1080x24 &
+        sudo /usr/bin/Xvfb :0.0 -screen 0 1920x1080x24 &
     - name: setup drivers
       uses: nanasess/setup-chromedriver@master
       #with:
@@ -77,7 +77,7 @@ jobs:
     - name: Maven e2e
       if: always()
       run: |
-        xvfb-run --auto-servernum  mvn -B '-Dtest=com.example.e2e.tests.SeleniumDemoTest' test  -Dvideo.enabled=true \
+        mvn -B '-Dtest=com.example.e2e.tests.SeleniumDemoTest' test  -Dvideo.enabled=true \
         -Dvideo.mode=ALL -Dvideo.save.mode=ALL -Drecorder.type=FFMPEG -Dvideo.screen.size=1920x1080 -Dffmpeg.display=:0.0 -Dffmpeg.format=x11grab
       continue-on-error: true
     - name: Get Allure history
