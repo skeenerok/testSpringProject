@@ -62,17 +62,17 @@ jobs:
         sudo apt-get install ffmpeg || echo 1
         google-chrome --version || echo 1
         ffmpeg || echo 1
+    - name: Setup xvfb (Linux)
+      if: runner.os == 'Linux'
+      run: |
+        sudo apt-get install -y xvfb libxkbcommon-x11-0 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-randr0 libxcb-render-util0 libxcb-xinerama0 libxcb-xinput0 libxcb-xfixes0
+        # start xvfb on (default) display :0
+        sudo /usr/bin/Xvfb $DISPLAY -screen 0 1920x1080x24 &
     - name: setup drivers
       uses: nanasess/setup-chromedriver@master
       #with:
         #Optional: do not specify to match Chrome's version
         #chromedriver-version: '90.0.4430.24'
-    - name: Install DISPLAY
-      if: always()
-      run: |
-        sudo export DISPLAY=:99
-        sudo Xvfb -ac :99 -screen 0 1920x1080x24 > /dev/null 2>&1 &
-
     - name: Maven e2e
       if: always()
       run: mvn -B '-Dtest=com.example.e2e.tests.SeleniumDemoTest' test  -Dvideo.enabled=true -Dvideo.mode=ALL
