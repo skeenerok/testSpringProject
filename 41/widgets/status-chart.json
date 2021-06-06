@@ -1,0 +1,21 @@
+[ {
+  "uid" : "e51f3b2b3548cdac",
+  "name" : "setUp",
+  "time" : {
+    "start" : 1623012542755,
+    "stop" : 1623012542757,
+    "duration" : 2
+  },
+  "status" : "broken",
+  "severity" : "normal"
+}, {
+  "uid" : "f2b11b7484ac9016",
+  "name" : "newFeature1",
+  "time" : {
+    "start" : 1623012536059,
+    "stop" : 1623012536062,
+    "duration" : 3
+  },
+  "status" : "unknown",
+  "severity" : "normal"
+} ]

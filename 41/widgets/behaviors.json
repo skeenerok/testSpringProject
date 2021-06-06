@@ -1,0 +1,15 @@
+{
+  "total" : 2,
+  "items" : [ {
+    "uid" : "a8c2c666038e08f9694c4423e7091352",
+    "name" : "newFeature1",
+    "statistic" : {
+      "failed" : 0,
+      "broken" : 0,
+      "skipped" : 0,
+      "passed" : 0,
+      "unknown" : 1,
+      "total" : 1
+    }
+  } ]
+}

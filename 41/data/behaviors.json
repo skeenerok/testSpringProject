@@ -1,0 +1,35 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "children" : [ {
+    "name" : "newFeature1",
+    "children" : [ {
+      "name" : "newFeature1",
+      "uid" : "f2b11b7484ac9016",
+      "parentUid" : "a8c2c666038e08f9694c4423e7091352",
+      "status" : "unknown",
+      "time" : {
+        "start" : 1623012536059,
+        "stop" : 1623012536062,
+        "duration" : 3
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "a8c2c666038e08f9694c4423e7091352"
+  }, {
+    "name" : "setUp",
+    "uid" : "e51f3b2b3548cdac",
+    "parentUid" : "b1a8273437954620fa374b796ffaacdd",
+    "status" : "broken",
+    "time" : {
+      "start" : 1623012542755,
+      "stop" : 1623012542757,
+      "duration" : 2
+    },
+    "flaky" : false,
+    "newFailed" : false,
+    "parameters" : [ ]
+  } ],
+  "name" : "behaviors"
+}
