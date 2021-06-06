@@ -75,7 +75,7 @@ jobs:
         #chromedriver-version: '90.0.4430.24'
     - name: Maven e2e
       if: always()
-      run: xvfb-run --auto-servernum  mvn -B '-Dtest=com.example.e2e.tests.SeleniumDemoTest' test  -Dvideo.enabled=true -Dvideo.mode=ALL
+      run: xvfb-run --auto-servernum  mvn -B '-Dtest=com.example.e2e.tests.SeleniumDemoTest' test  -Dvideo.enabled=true -Dvideo.mode=ALL -Dvideo.save.mode=ALL
       continue-on-error: true
     - name: Get Allure history
       uses: actions/checkout@v2
