@@ -20,6 +20,7 @@ public class TestListener extends UniversalVideoListener implements ITestListene
 
     @Override
     public void onTestSuccess(ITestResult result) {
+        BrowserLogs.checkLogs();
         Reporter.log("[PASSED] " +  getName(result.getMethod()), true);
     }
 
@@ -37,6 +38,7 @@ public class TestListener extends UniversalVideoListener implements ITestListene
                 AttachmentHelper.addVideo(result.getMethod().getMethodName());
             }
             attachTestArtifacts(result);
+            BrowserLogs.checkLogs();
         } catch (Exception ex) {
             ex.printStackTrace();
         }
