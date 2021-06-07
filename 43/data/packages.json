@@ -1,0 +1,48 @@
+{
+  "uid" : "83edc06c07f9ae9e47eb6dd1b683e4e2",
+  "children" : [ {
+    "name" : "com.example.e2e.tests.SeleniumDemoTest",
+    "children" : [ {
+      "name" : "newFeature1",
+      "uid" : "35480147b4e80276",
+      "parentUid" : "1b18f9c3d2c0c1b4be8f9253492cdfa6",
+      "status" : "unknown",
+      "time" : {
+        "start" : 1623092261487,
+        "stop" : 1623092261489,
+        "duration" : 2
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "userLogin",
+      "uid" : "e33ff298d592bd6d",
+      "parentUid" : "1b18f9c3d2c0c1b4be8f9253492cdfa6",
+      "status" : "passed",
+      "time" : {
+        "start" : 1623092271089,
+        "stop" : 1623092272752,
+        "duration" : 1663
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "userLoginIncorrect",
+      "uid" : "2ac0f110363cb84f",
+      "parentUid" : "1b18f9c3d2c0c1b4be8f9253492cdfa6",
+      "status" : "failed",
+      "time" : {
+        "start" : 1623092272789,
+        "stop" : 1623092276556,
+        "duration" : 3767
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "com.example.e2e.tests.SeleniumDemoTest"
+  } ],
+  "name" : "packages"
+}
