@@ -79,7 +79,7 @@ jobs:
       run: |
         mvn -B '-Dtest=com.example.e2e.tests.SeleniumDemoTest' test  -Dvideo.enabled=true \
         -Dvideo.mode=ALL -Dvideo.save.mode=ALL -Drecorder.type=FFMPEG -Dvideo.screen.size=1920x1080  -Dffmpeg.format=x11grab
-      continue-on-error: true
+      #continue-on-error: true
     - name: Get Allure history
       uses: actions/checkout@v2
       if: always()
