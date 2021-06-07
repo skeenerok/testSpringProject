@@ -1,0 +1,4 @@
+"Status","Start Time","Stop Time","Duration in ms","Parent Suite","Suite","Sub Suite","Test Class","Test Method","Name","Description"
+"failed","Mon Jun 07 19:59:11 GMT 2021","Mon Jun 07 19:59:14 GMT 2021","3305","Surefire suite","Surefire test","com.example.e2e.tests.SeleniumDemoTest","com.example.e2e.tests.SeleniumDemoTest","userLoginIncorrect","userLoginIncorrect","Use incorrect login"
+"unknown","Mon Jun 07 19:58:55 GMT 2021","Mon Jun 07 19:58:55 GMT 2021","3","Surefire suite","Surefire test","com.example.e2e.tests.SeleniumDemoTest","com.example.e2e.tests.SeleniumDemoTest","newFeature1","newFeature1",""
+"passed","Mon Jun 07 19:59:10 GMT 2021","Mon Jun 07 19:59:11 GMT 2021","1278","Surefire suite","Surefire test","com.example.e2e.tests.SeleniumDemoTest","com.example.e2e.tests.SeleniumDemoTest","userLogin","userLogin","Use correct login"
