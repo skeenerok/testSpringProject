@@ -13,7 +13,8 @@ on:
 
 jobs:
   build:
-
+    env:
+      DISPLAY: :0
     runs-on: ubuntu-latest
 
     services:
@@ -54,27 +55,31 @@ jobs:
       run: ls
     - name: run app
       run: java -jar $(pwd)/target/testSpring-1.0-SNAPSHOT.jar --spring.profiles.active=dev  --spring.config.location=$(pwd)/src/main/resources/ &
-    - name: Start selenoid
-      uses: Xotabu4/selenoid-github-action@v1
+    #- name: Start selenoid
+    #  uses: Xotabu4/selenoid-github-action@v1
     - name: Install Google Chrome # Using shell script to install Google Chrome
       run: |
         sudo apt-get update
-        sudo apt-get --only-upgrade install google-chrome-stable
-        google-chrome --version
+        sudo apt-get install ffmpeg || echo 1
+        sudo apt-get install x11vnc || echo 1
+        google-chrome --version || echo 1
+        ffmpeg || echo 1
+    - name: Setup xvfb (Linux)
+      if: runner.os == 'Linux'
+      run: |
+        sudo apt-get install -y xvfb libxkbcommon-x11-0 libxcb-icccm4 libxcb-image0 libxcb-keysyms1 libxcb-randr0 libxcb-render-util0 libxcb-xinerama0 libxcb-xinput0 libxcb-xfixes0
+        sudo /usr/bin/Xvfb $DISPLAY -screen 0 1920x1080x24 &
+    - name: setup drivers
+      uses: nanasess/setup-chromedriver@master
+      #with:
+        #Optional: do not specify to match Chrome's version
+        #chromedriver-version: '90.0.4430.24'
     - name: Maven e2e
       if: always()
-      run: mvn -B '-Dtest=com.example.e2e.tests.SeleniumDemoTest' test
-      continue-on-error: true
-
-      #- uses: nanasess/setup-chromedriver@master
-      #with:
-        # Optional: do not specify to match Chrome's version
-        #chromedriver-version: '90.0.4430.24'
-      #- run: |
-        #export DISPLAY=:99
-        #chromedriver --url-base=/wd/hub &
-        #sudo Xvfb -ac :99 -screen 0 1920x1080x24 > /dev/null 2>&1 & # optional
-
+      run: |
+        mvn -B '-Dtest=com.example.e2e.tests.SeleniumDemoTest' test  -Dvideo.enabled=true \
+        -Dvideo.mode=ALL -Dvideo.save.mode=ALL -Drecorder.type=FFMPEG -Dvideo.screen.size=1920x1080  -Dffmpeg.format=x11grab
+      #continue-on-error: true
     - name: Get Allure history
       uses: actions/checkout@v2
       if: always()
