@@ -49,7 +49,6 @@ public class SeleniumDemoTest implements IDriverSupplier, ITestArtifactProvider 
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         options.addArguments("--disable-dev-shm-usage");
-        //options.addArguments("--headless");
         LoggingPreferences logs = new LoggingPreferences();
         Level logLevel = Level.parse(Configuration.getStringProperty("LOG_LEVEL", Level.SEVERE.toString()));
         String logType = Configuration.getStringProperty("LOG_TYPE", org.openqa.selenium.logging.LogType.BROWSER);
