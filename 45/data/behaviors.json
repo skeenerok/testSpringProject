@@ -1,0 +1,52 @@
+{
+  "uid" : "b1a8273437954620fa374b796ffaacdd",
+  "children" : [ {
+    "name" : "newFeature1",
+    "children" : [ {
+      "name" : "newFeature1",
+      "uid" : "a805485049f1b77b",
+      "parentUid" : "a8c2c666038e08f9694c4423e7091352",
+      "status" : "unknown",
+      "time" : {
+        "start" : 1623263738010,
+        "stop" : 1623263738012,
+        "duration" : 2
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "a8c2c666038e08f9694c4423e7091352"
+  }, {
+    "name" : "Demo login test",
+    "children" : [ {
+      "name" : "userLogin",
+      "uid" : "b3c2b7e074575660",
+      "parentUid" : "6702b06cdd74511428bbe29ffaead9cb",
+      "status" : "passed",
+      "time" : {
+        "start" : 1623263750777,
+        "stop" : 1623263752275,
+        "duration" : 1498
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    }, {
+      "name" : "userLoginIncorrect",
+      "uid" : "af03de3d8830d22d",
+      "parentUid" : "6702b06cdd74511428bbe29ffaead9cb",
+      "status" : "failed",
+      "time" : {
+        "start" : 1623263752305,
+        "stop" : 1623263755798,
+        "duration" : 3493
+      },
+      "flaky" : false,
+      "newFailed" : false,
+      "parameters" : [ ]
+    } ],
+    "uid" : "6702b06cdd74511428bbe29ffaead9cb"
+  } ],
+  "name" : "behaviors"
+}
